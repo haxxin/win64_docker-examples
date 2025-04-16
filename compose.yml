@@ -1,14 +1,19 @@
 ---
 
 networks:
-  traefik-proxy:
+  proxy:
     attachable: true
     driver: overlay
     external: true
 
+volumes:
+    data:
+      external: true
+
 services:
 
   whoami:
+    container_name: whoami-1
     image: nginx:alpine
     restart: unless-stopped
     environment:
@@ -18,7 +23,25 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
-      - traefik-proxy
+      - proxy
     ports:
       - 80:80/tcp
 
+  portainer:
+    restart: unless-stopped
+    container_name: portainer-1
+    image: portainer/portainer-ce:latest
+    ports:
+      - 9443:9443
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy
+    
+  pytorch:
+    restart: unless-stopped
+    container_name: portainer-1
+    #image: 
+    env_file:
+      - .env.dev
