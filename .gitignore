@@ -1,0 +1,11 @@
+
+build/**
+dist/**
+.env
+!.env.dist
+!.env.production
+
+files/**
+
+tmp/**
+temp/**
