@@ -20,10 +20,23 @@ Time shall tell. Wish me luck :-P
 
 ## usage
 
+### deps
+
+- Docker `vX` from the chocolately repositories
+  * `choco.exe` -- *...*
+- MS Powershell `vX.x` from MS Store
+- text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
+  * vscode
+  * vim
+  * notepad   
+
+### installation
+
 ```sh
 # one-time setup per host
 git clone https://github.com/haxxin/win64_docker-examples.git
-cd win64_docker-examples.git
+# NOTE(JEFF): The .git suffix is semantic (for me) and is typically presented without said suffix
+cd win64_docker-examples.git # win64_docker-examples
 
 # bootstrap; one-time
 docker network create proxy
@@ -31,7 +44,11 @@ docker volume create portainer-data
 
 # project env bootstrap; one-time
 cp -av .env.dist .env
+```
 
+### daily operations
+ 
+```sh
 # service control
 docker compose up -drun
 docker compose logs # --since=24h
@@ -39,15 +56,26 @@ docker compose down
 docker compose up -d --force-recreate
 ```
 
-
 ### hierarchy
 
-- `.env`
-- `compose.yml`
-- `nginx.conf`
-- `mounts/*`
+- `.env.dist` -- default environment state for service(s)
+  * `.env` -- this is specific to each developer's host
+
+- `compose.yml` -- Docker compose "template" file for service containers
+
+- `nginx.conf` -- example configuration using nginx as the frontend webserver for our backend 
+
+- `mounts/*` -- bind mount storage; the name can be anything you want, but we must be consistent 
 
 ## reference documents
+
+1. [pytorch install](https://pytorch.org/get-started/locally/)
+
+2. [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local)
+
+3. [CUDA Toolkit: Installation](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#meta-packages)
+
+4. [api docs](https://pytorch.org/docs/stable/cuda.html)
 
 [10]: https://earthly.dev/blog/portainer-for-docker-container-management/
 
