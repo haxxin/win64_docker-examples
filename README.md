@@ -28,7 +28,10 @@ Time shall tell. Wish me luck :-P
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
   * vscode
   * vim
-  * notepad   
+  * notepad
+- `git`
+- `curl`
+- *...*   
 
 ### installation
 
@@ -82,8 +85,3 @@ docker compose up -d --force-recreate
 ## scratchpad
 
 *...*
-
-## TODO
-
-- [ ] pyTorch setup
-- [ ] *...*
