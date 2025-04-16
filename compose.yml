@@ -1,5 +1,9 @@
 ---
 
+# DEPRECATED(JEFF): This syntax is deprecated and 
+# shall be removed in a later version of docker-compose.  
+#version: 3
+
 networks:
   proxy:
     attachable: true
@@ -7,9 +11,9 @@ networks:
     external: true
 
 volumes:
-    data:
+    portainer-data:
       external: true
-
+				
 services:
 
   whoami:
@@ -34,7 +38,7 @@ services:
     ports:
       - 9443:9443
     volumes:
-      - data:/data
+      - portainer-data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - proxy
