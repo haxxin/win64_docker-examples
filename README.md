@@ -24,6 +24,7 @@ Time shall tell. Wish me luck :-P
 
 - ~Docker `vX` from the chocolately repositories~
 - [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
+  * `sudo apt install apt-transport-https ca-certificates curl software-properties-common -y`
 - begin fresh and uninstall existing Docker environment if yours is in question
   - uninstall; Powershell w/ usage of the [Chocolately repositories][99]
     * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
