@@ -35,6 +35,9 @@ My friend's objective is to setup a development environment suitable for learnin
 - `curl`
 - *...*
 
+**IMPORTANT(JEFF):** It is strongly advised that you setup a [mount to an ext4 partition][110] however you desire. It is critical that you use a SSD with decent write performance as software development demands quick file I/O. A slow(er) disk will still likely be faster than not bothering with one.   
+
+
 ### installation
 
 ```sh
@@ -88,6 +91,7 @@ docker compose up -d --force-recreate
 [99]: https://chocolatey.org/
 [90]: https://get.docker.com/
 [100]: https://github.com/KichangKim/DeepDanbooru
+[110]: https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk#
 
 ## scratchpad
 
