@@ -22,6 +22,8 @@ Time shall tell. Wish me luck :-P
 
 ### deps
 
+**WARNING(JEFF):** Please do not try to install the Docker packages from either your distribution nor especially some random site on the net. The official [installation script][90] does a fine job of preparing the environment and getting things set up the best way possible for the end-user to start off with. Anybody whom gains access to your host via the Docker daemon (or one of its containers) automatically gains system privileges. You have been warned!
+
 - ~Docker `vX` from the chocolately repositories~
 - [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
   * `sudo apt install apt-transport-https ca-certificates curl software-properties-common -y`
@@ -31,7 +33,7 @@ Time shall tell. Wish me luck :-P
   - uninstall; WSL2
     * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
  - install; WSL2
-    * `sudo apt update && sudo apt install docker-ce -y`
+    * `sudo apt update && sudo apt install docker-ce docker-compose -y`
   
 - MS Powershell `vX.x` from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
@@ -82,7 +84,7 @@ docker compose up -d --force-recreate
 
 ## reference documents
 
-[0]: https://docs.docker.com/engine/install/debian/
+[0]: https://docs.docker.com/engine/install/debian/#install-using-the-repository
 
 1. [pytorch install](https://pytorch.org/get-started/locally/)
 
@@ -94,6 +96,7 @@ docker compose up -d --force-recreate
 
 [10]: https://earthly.dev/blog/portainer-for-docker-container-management/
 [99]: https://chocolatey.org/
+[90]: https://get.docker.com/
 
 ## scratchpad
 
