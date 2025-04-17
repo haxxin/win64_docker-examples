@@ -22,19 +22,25 @@ Time shall tell. Wish me luck :-P
 
 ### deps
 
-- Docker `vX` from the chocolately repositories
- * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
- * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
-  * `sudo apt update && sudo apt install docker-ce -y`
-  * `choco.exe` -- *...*
+- ~Docker `vX` from the chocolately repositories~
+- [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
+- begin fresh and uninstall existing Docker environment if yours is in question
+  - uninstall; Powershell w/ usage of the [Chocolately repositories][99]
+    * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
+  - uninstall; WSL2
+    * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+ - install; WSL2
+    * `sudo apt update && sudo apt install docker-ce -y`
+  
 - MS Powershell `vX.x` from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
-  * vscode
-  * vim
+  * vscode (ugh, but such is life...)
+  * vim (my primary choice when I can get by with it)
   * notepad
+  * Sublime Text (a personal favorite!)
 - `git`
 - `curl`
-- *...*   
+- *...*
 
 ### installation
 
@@ -75,6 +81,8 @@ docker compose up -d --force-recreate
 
 ## reference documents
 
+[0]: https://docs.docker.com/engine/install/debian/
+
 1. [pytorch install](https://pytorch.org/get-started/locally/)
 
 2. [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local)
@@ -84,6 +92,7 @@ docker compose up -d --force-recreate
 4. [api docs](https://pytorch.org/docs/stable/cuda.html)
 
 [10]: https://earthly.dev/blog/portainer-for-docker-container-management/
+[99]: https://chocolatey.org/
 
 ## scratchpad
 
