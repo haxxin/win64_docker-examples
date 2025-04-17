@@ -4,11 +4,7 @@ My very first experience with setting up and using ~Docker Desktop~ Docker in WS
 
 This *tutorial* begins as a guide for a friend whom is just starting out on his journey with Docker. My primary objective is to explain how the internals of Docker work in regard to the host OS -- this time being `WSL2` -- I like to think of it as `WSL` being the VM image (OS disk) and Windows 10/11 as the hypervisor. So, just two levels, err, three, to logically consider of "indirection'.
 
-My friend's objective is to setup a development environment suitable for learning the TensorFlow API.  Therefore, a specific `Python3.x` version must be managed within some context (Docker) for `Pytorch` and other dependencies.
-
-I strongly suspect that I will want to stick with the CPU renderer while writing this up and attempt to accomplish my task separately. 
-
-Time shall tell. Wish me luck :-P
+My friend's objective is to setup a development environment suitable for learning the TensorFlow API.  Therefore, a specific `Python3.x` version must be managed within some context (Docker) for `Pytorch` and other dependencies. Whereas he has the luxery of using a decent GPU, I am likely going to be stuck with CPU-only rendering, thus this will be reflected in this source tree. 
 
 - [Portainer CE tutorial][10]
 
