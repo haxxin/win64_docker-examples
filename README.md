@@ -23,6 +23,9 @@ Time shall tell. Wish me luck :-P
 ### deps
 
 - Docker `vX` from the chocolately repositories
+ * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+ * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
+  * `sudo apt update && sudo apt install docker-ce -y`
   * `choco.exe` -- *...*
 - MS Powershell `vX.x` from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
