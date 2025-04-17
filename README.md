@@ -27,7 +27,7 @@ My friend's objective is to setup a development environment suitable for learnin
   
 - MS Powershell `vX.x` from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
-  * vscode (ugh, but such is life...)
+  * [vscode][120]
   * vim (my primary choice when I can get by with it)
   * notepad
   * Sublime Text (a personal favorite!)
@@ -92,6 +92,7 @@ docker compose up -d --force-recreate
 [90]: https://get.docker.com/
 [100]: https://github.com/KichangKim/DeepDanbooru
 [110]: https://learn.microsoft.com/en-us/windows/wsl/wsl2-mount-disk#
+[120]: https://wiki.debian.org/VisualStudioCode
 
 ## scratchpad
 
