@@ -13,7 +13,7 @@ networks:
 volumes:
     portainer-data:
       external: true
-				
+
 services:
 
   whoami:
@@ -42,10 +42,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - proxy
-    
-  pytorch:
-    restart: unless-stopped
-    container_name: portainer-1
+ 
+  #pytorch:
+    #restart: unless-stopped
+    #container_name: portainer-1
     #image: 
-    env_file:
-      - .env.dev
+    #env_file:
+      #- .env.dev
