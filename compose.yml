@@ -42,10 +42,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - proxy
- 
+
   #pytorch:
     #restart: unless-stopped
-    #container_name: portainer-1
-    #image: 
+    #container_name: pytorch-1
+    #build:
+      #context: "."
+      #dockerfile: "Dockerfile_pytorch"
+    #image:
     #env_file:
-      #- .env.dev
+    #- .env.dev
