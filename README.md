@@ -14,7 +14,6 @@ My friend's objective is to setup a development environment suitable for learnin
 
 **WARNING(JEFF):** Please do not try to install the Docker packages from either your distribution nor especially some random site on the net. The official [installation script][90] does a fine job of preparing the environment and getting things set up the best way possible for the end-user to start off with. Anybody whom gains access to your host via the Docker daemon (or one of its containers) automatically gains system privileges. You have been warned!
 
-- ~Docker `vX` from the chocolately repositories~
 - [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
   * `sudo apt install apt-transport-https ca-certificates curl software-properties-common -y`
 - begin fresh and uninstall existing Docker environment if yours is in question
@@ -22,18 +21,19 @@ My friend's objective is to setup a development environment suitable for learnin
     * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
   - uninstall; WSL2
     * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
- - install; WSL2
-    * `sudo apt update && sudo apt install docker-ce docker-compose -y`
-  
-- MS Powershell `vX.x` from MS Store
+- install; WSL2
+  * `sudo apt update && sudo apt install docker-ce docker-compose -y`
+- start Docker daemon (every time WSL boots)
+  * `sudo /etc/init.d/docker start`
+- MS Powershell from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
   * [vscode][120]
-  * vim (my primary choice when I can get by with it)
-  * notepad
-  * Sublime Text (a personal favorite!)
+  * vim (my second favorite)
+  * Notepad
+  * Notepad++
+  * Sublime Text 2/3 (my favorite <3)
 - `git`
 - `curl`
-- *...*
 
 **IMPORTANT(JEFF):** It is strongly advised that you setup a [mount to an ext4 partition][110] however you desire. It is critical that you use a SSD with decent write performance as software development demands quick file I/O. A slow(er) disk will still likely be faster than not bothering with one.   
 
