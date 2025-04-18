@@ -15,7 +15,7 @@ My friend's objective is to setup a development environment suitable for learnin
 **WARNING(JEFF):** Please do not try to install the Docker packages from either your distribution nor especially some random site on the net. The official [installation script][90] does a fine job of preparing the environment and getting things set up the best way possible for the end-user to start off with. Anybody whom gains access to your host via the Docker daemon (or one of its containers) automatically gains system privileges. You have been warned!
 
 - [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
-  * `sudo apt install apt-transport-https ca-certificates curl software-properties-common -y`
+  * `sudo apt install -y apt-transport-https ca-certificates curl software-properties-common`
 - begin fresh and uninstall existing Docker environment if yours is in question
   - uninstall; Powershell w/ usage of the [Chocolately repositories][99]
     * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
@@ -43,7 +43,7 @@ My friend's objective is to setup a development environment suitable for learnin
 ```sh
 # one-time setup per host
 git clone https://github.com/haxxin/win64_docker-examples.git
-# NOTE(JEFF): The .git suffix is semantic (for me) and is typically presented without said suffix
+# NOTE(JEFF): The .git suffix is semantic for me
 cd win64_docker-examples.git # win64_docker-examples
 
 # bootstrap; one-time
