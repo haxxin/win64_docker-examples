@@ -67,7 +67,8 @@ docker compose up -d --force-recreate
 ### hierarchy
 
 - `.env.dist` -- default environment state for service(s)
-  * `.env` -- this is specific to each developer's host
+  * `.env` -- this is specific to each developer's host and should **NEVER**
+  be commited to your git repository under any circumstance!
 
 - `compose.yml` -- Docker compose "template" file for service containers
 
