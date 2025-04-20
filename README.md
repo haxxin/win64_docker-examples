@@ -7,6 +7,7 @@ This *tutorial* begins as a guide for a friend whom is just starting out on his 
 My friend's objective is to setup a development environment suitable for learning the TensorFlow API.  Therefore, a specific `Python3.x` version must be managed within some context (Docker) for `Pytorch` and other dependencies. Whereas he has the luxery of using a decent GPU, I am likely going to be stuck with CPU-only rendering, thus this will be reflected in this source tree. 
 
 - [Portainer CE tutorial][10]
+- [Project Wiki](https://github.com/haxxin/win64_docker-examples/wiki)
 
 ## usage
 
@@ -14,7 +15,7 @@ My friend's objective is to setup a development environment suitable for learnin
 
 **WARNING(JEFF):** Please do not try to install the Docker packages from either your distribution nor especially some random site on the net. The official [installation script][90] does a fine job of preparing the environment and getting things set up the best way possible for the end-user to start off with. Anybody whom gains access to your host via the Docker daemon (or one of its containers) automatically gains system privileges. You have been warned!
 
-- [Docker with WSL2][0]; I shall base my instructions off Debian 12 "Bookworm"
+- [Docker with WSL2][0] at `>= v23.x`; I shall base my instructions off Debian 12 "Bookworm"
   * `sudo apt install -y apt-transport-https ca-certificates curl software-properties-common`
 - begin fresh and uninstall existing Docker environment if yours is in question
   - uninstall; Powershell w/ usage of the [Chocolately repositories][99]
@@ -36,7 +37,6 @@ My friend's objective is to setup a development environment suitable for learnin
 - `curl`
 
 **IMPORTANT(JEFF):** It is strongly advised that you setup a [mount to an ext4 partition][110] however you desire. It is critical that you use a SSD with decent write performance as software development demands quick file I/O. A slow(er) disk will still likely be faster than not bothering with one.   
-
 
 ### installation
 
