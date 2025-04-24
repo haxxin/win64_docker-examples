@@ -1,0 +1,42 @@
+# Dockerfile_pytorch:jeff
+#
+# Base build environment for PyTorch
+#
+
+FROM pytorch/manylinux-cuda111:latest
+LABEL maintainer="Jeffrey Carpenter <1329364+i8degrees@users.noreply.github.com>"
+
+USER root
+WORKDIR /root
+
+# NOTE(JEFF): Any conveniences we wish to have within the container's shell
+# should be handled here if we wish for it to be permanent.
+COPY --chmod=+x --chown=root:root \
+  ./build.sh /build.sh
+#COPY --chown=root:root bashrc ./.bashrc
+#COPY --chown=root:root bash_profile ./.bash_profile
+#COPY --chown=root:root bash_aliases ./.bash_aliases
+#COPY --chown=root:root inputrc ./.inputrc
+
+# NOTE(JEFF): I have separated the distribution build sections as its own
+# shell script for the sake of a bit less struggle for me with debugging
+# issues with this step.
+RUN echo "INFO: Executing /build.sh..." && \
+  sh -c '/build.sh'
+
+# NOTE(JEFF): create "code" user
+#RUN echo "INFO: Adding unprivileged user 'code:src' to container..." && \
+#useradd -m -s /bin/bash -G src code
+#adduser -S -D -G src vscode
+
+#EXPOSE 8000/tcp
+
+#USER root
+#WORKDIR /root
+#ENTRYPOINT ["/usr/bin/code", "server", "--no-sandbox" ]
+
+#USER code
+#WORKDIR /home/code
+#ENTRYPOINT ["/usr/bin/code", "tunnel" ]
+#CMD ["/usr/bin/code", "serve-web" ]
+
