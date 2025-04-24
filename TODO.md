@@ -8,3 +8,15 @@
   of the tutorial
 - [ ] verify the timestamp of the conversation Michael and I had
     * <https://github.com/haxxin/win64_docker-examples/wiki/R&D#>
+
+- [ ] Enable [systemd unit][10] usage for WSL2
+    * This should allow us to automatically enable Docker boot at the time
+    of WSL2 subsystem startup -- no more manual invocation of the Docker
+    service for us.
+    * Update the relevant info within `README.md` once we are done with this
+    task.
+
+### reference documents
+
+[10]: https://learn.microsoft.com/en-us/windows/wsl/systemd
+
