@@ -22,8 +22,9 @@ on your work environment and preferences.
 # --recursive implies that this repo makes use of git submodules
 git clone --recursive \
     "https://github.com/haxxin/win64_docker-examples" \
-win64_docker-examples.git
-cd win64_docker-examples.git
+win64_docker-examples.git # creation
+cd win64_docker-examples.git # project dir
+git checkout master # your origin branch
 # success! you are now ready to move on to the next
 # phase -- dependencies...
 ```
@@ -61,8 +62,9 @@ and live with.
 # --recursive implies that this repo makes use of git submodules
 git clone --recursive \
     "git@github.com:haxxin/win64_docker-examples" \
-win64_docker-examples.git
-cd win64_docker-examples.git
+win64_docker-examples.git # creation
+cd win64_docker-examples.git # project dir
+git checkout dev # your origin branch to begin from
 # success! you are now ready to move on to the next 
 # phase -- dependencies...
 ```
