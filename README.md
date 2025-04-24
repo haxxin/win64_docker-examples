@@ -75,15 +75,17 @@ git checkout dev # your origin branch to begin from
 
 - [Docker with WSL2][0] at `>= v23.x`; I shall base my instructions off Debian 12 "Bookworm"
   * `sudo apt install -y apt-transport-https ca-certificates curl software-properties-common`
+
 - begin fresh and uninstall existing Docker environment if yours is in question
   - uninstall; Powershell w/ usage of the [Chocolately repositories][99]
     * `choco.exe uninstall docker docker-cli docker-machine docker-engine`
   - uninstall; WSL2
     * `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+
 - install; WSL2
-  * `sudo apt update && sudo apt install docker-ce docker-compose -y`
-- start Docker daemon (every time WSL boots)
-  * `sudo /etc/init.d/docker start`
+  * `apt-get update && apt-get install -y curl ca-certificates apt-transport-https ca-certificates curl software-properties-common docker-ce docker-compose`
+    - start Docker daemon (every time WSL boots)
+        * `sudo /etc/init.d/docker start`
 - MS Powershell from MS Store
 - text editor; anything with support for ASCII and/or UTF-8 w/ automatic conversion between `\r\n` (Windows) and *nix (`\n`) encodings
   * [vscode][120]
