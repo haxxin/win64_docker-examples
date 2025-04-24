@@ -8,3 +8,5 @@
   of the tutorial
 - [ ] verify the timestamp of the conversation Michael and I had
     * <https://github.com/haxxin/win64_docker-examples/wiki/R&D#>
+
+- [ ] rename this repository to something more accurately relevant -- **win64_pytorch-examples** perhaps? I shall ponder this for some time before deciding; I expect by the end of this project, I will have my answer!
