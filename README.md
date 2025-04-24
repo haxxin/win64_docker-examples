@@ -11,6 +11,62 @@ My friend's objective is to setup a development environment suitable for learnin
 
 ## usage
 
+**NOTE(JEFF):** This guide assumes that you wish to setup this project
+as an end-user and not a potential upstream contributor leading back to
+this very git repository. Refer to the **contribitor** sub-section
+below if you wish to contribute as the usage may vary slightly depending
+on your work environment and preferences.
+
+```sh
+# cd "$HOME/Projects" or so as you wish
+# --recursive implies that this repo makes use of git submodules
+git clone --recursive \
+    "https://github.com/haxxin/win64_docker-examples" \
+win64_docker-examples.git
+cd win64_docker-examples.git
+# success! you are now ready to move on to the next
+# phase -- dependencies...
+```
+
+If you forget or even choose to not pull the git modules now, you can always
+opt-in later on by issuing the following anywhere inside this git repository:
+
+```sh
+# WARNING(JEFF): You must not have unstaged modifications at the time you issue
+# the following. Stash the changes or commit the changes, however you wish. I
+# often will switch to a new branch and make the commits there.
+git submodule update --init --recursive
+git submodule sync
+```
+
+### contributor
+
+The only difference here is the choice in the backend you opt to use.
+Git has three major backends available by default: git, https and ssh.
+All three have access control means (authentication) and which you
+choose is mostly a matter of semantics and preference.
+
+You may want to look into the GitHub documentation on git credential
+management to better understand the choices herein. If all else fails,
+feel free to use the same HTTPS method as shown above and use the web
+client features to commit all of your proposed modifications as
+**Pull Requests**.
+
+In any case, my preferred means is **SSH** as I already live and breath
+SSH keys for a living and this is the easiest method for me to setup
+and live with.
+
+```sh
+# cd "$HOME/Projects" or so as you wish
+# --recursive implies that this repo makes use of git submodules
+git clone --recursive \
+    "git@github.com:haxxin/win64_docker-examples" \
+win64_docker-examples.git
+cd win64_docker-examples.git
+# success! you are now ready to move on to the next 
+# phase -- dependencies...
+```
+
 ### deps
 
 **WARNING(JEFF):** Please do not try to install the Docker packages from either your distribution nor especially some random site on the net. The official [installation script][90] does a fine job of preparing the environment and getting things set up the best way possible for the end-user to start off with. Anybody whom gains access to your host via the Docker daemon (or one of its containers) automatically gains system privileges. You have been warned!
