@@ -9,7 +9,10 @@
 - [x] verify the timestamp of the conversation Michael and I had
     * <https://github.com/haxxin/win64_docker-examples/wiki/R&D#>
 
-- [ ] rename this repository to something more accurately relevant -- **win64_pytorch-examples** perhaps? I shall ponder this for some time before deciding; I expect by the end of this project, I will have my answer!
+- [ ] rename this repository to something more accurately relevant --
+**win64_pytorch-examples** perhaps? I shall ponder this for some time before
+deciding; I expect by the end of this project, I will have my answer!
+
 - [ ] Enable [systemd unit][10] usage for WSL2
     * This should allow us to automatically enable Docker boot at the time
     of WSL2 subsystem startup -- no more manual invocation of the Docker
