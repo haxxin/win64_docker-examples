@@ -1,0 +1,21 @@
+---
+
+services:
+
+  nvidia-container-toolkit:
+    privileged: true
+    user: root:root
+    container_name: nvidia-container-toolkit-1
+    image: nvidia/cuda:11.4.3-base-ubuntu20.04
+    #command: ["--gpus", all"]
+    command: ["nvidia-smi", "-L"]
+    #command: "nvcc - V"
+    runtime: nvidia
+    gpus: all
+    restart: no
+    environment:
+      - TZ=America/Chicago
+      #- NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_VISIBLE_DEVICES=/dev/dri/by-path/pci-0000:01:00.0-card
+    env_file:
+      .env

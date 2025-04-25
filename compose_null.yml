@@ -1,0 +1,11 @@
+services:
+  
+  portainer-ce:
+    image: nginx:alpine
+  pytorch:
+    image: nginx:alpine
+  whoami1:
+    image: nginx:alpine
+  nvidia-container-toolkit:
+    image: nginx:alpine
+

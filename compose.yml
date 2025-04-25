@@ -16,39 +16,23 @@ volumes:
 
 services:
 
-  whoami:
-    container_name: whoami-1
-    image: nginx:alpine
-    restart: unless-stopped
-    environment:
-      - TZ=America/Chicago
-    env_file:
-      .env
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    networks:
-      - proxy
-    ports:
-      - 3000:80/tcp
+  #whoami:
+    #extends:
+      #file: compose_null.yml
+      #service: whoami1
 
-  portainer:
-    restart: unless-stopped
-    container_name: portainer-1
-    image: portainer/portainer-ce:latest
-    ports:
-      - 9443:9443
-    volumes:
-      - portainer-data:/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - proxy
+  #portainer:
+    #extends:
+      #file: compose_portainer.yml
+      #file: compose_null.yml
+      #service: portainer-ce
 
-  #pytorch:
-    #restart: unless-stopped
-    #container_name: pytorch-1
-    #build:
-      #context: "."
-      #dockerfile: "Dockerfile_pytorch"
-    #image:
-    #env_file:
-    #- .env.dev
+  nvidia-toolkit:
+    extends:
+      file: compose_nv.yml
+      service: nvidia-container-toolkit
+
+  pytorch-test:
+    extends:
+      file: compose_pytorch.yml
+      service: pytorch

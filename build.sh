@@ -8,7 +8,7 @@
 # we perform our first round of installations; we cannot proceed to the next 
 # step until the curl package has been installed.
 apt-get update && apt-get install -y \
-  net-tools netstat lsof gpg curl git ca-certificates bash procps
+  net-tools netstat lsof curl git # ca-certificates bash procps gpg
 
 # Second step: Pull the latest repository key(s), verify and then add them to
 # the system keyring for future updates.
@@ -22,5 +22,5 @@ apt-get update && apt-get install -y \
 
 # Speaking of updates: this is our last system update before we begin install
 # of the packages that we wrote this repository for!
-#apt-get update && apt-get install -y \
-  #code
+apt-get update && apt-get install -y \
+  python3-venv python3-full
