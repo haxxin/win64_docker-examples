@@ -31,7 +31,7 @@ back to the docker-desktop runtime
   - `systemctl status docker.service` (system-wide; root)
 
 - [ ] verify that our Docker w/ NVIDIA runtime tests work under tmux
-  - `/mnt/fs1/Projects/haxxin/win64_docker-examples.git/tests/test.bash`
+  - `/mnt/fs1/Projects/haxxin/win64_docker-examples.git/tests/nvidia-container-runtime.bash`
 
 ### reference documents
 
