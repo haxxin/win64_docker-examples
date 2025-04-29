@@ -1,3 +1,8 @@
+---
+title:  Win64 Docker Examples
+filename: TODO.md
+---
+
 # win64_docker-examples
 
 ## TODO
@@ -19,6 +24,14 @@ deciding; I expect by the end of this project, I will have my answer!
     service for us.
     * Update the relevant info within `README.md` once we are done with this
     task.
+
+- [ ] match the modifications made by the nvidia runtime to the system-wide install
+back to the docker-desktop runtime
+  - `systemctl --user status docker-desktop.service` (rootless; user)
+  - `systemctl status docker.service` (system-wide; root)
+
+- [ ] verify that our Docker w/ NVIDIA runtime tests work under tmux
+  - `/mnt/fs1/Projects/haxxin/win64_docker-examples.git/tests/test.bash`
 
 ### reference documents
 
